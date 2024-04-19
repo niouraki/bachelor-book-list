@@ -15,9 +15,11 @@
 <?php
 include "dbconnection.php";
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// comment in to see error messages
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 $query = '';
 $result;
 
@@ -33,13 +35,10 @@ if (isset($_POST["submit-search"])) {
 } else {
 //    if not get all the data
     $query = "SELECT * FROM books_list";
-//    $result = mysqli_query($connection, $query);
 }
 
 $result = mysqli_query($connection, $query);
 $number_of_rows=mysqli_num_rows($result);
-
-
 ?>
 
 <h1>My Books</h1>
